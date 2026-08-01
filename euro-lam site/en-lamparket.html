@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oak Lam Parquet | EURO-LAM LLC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="EURO-LAM">
+    </div>
+
+    <nav>
+        <a href="en-index.html">← Home</a>
+    </nav>
+</header>
+
+<section class="section product-page">
+
+    <section class="product-hero">
+
+        <div class="hero-text">
+            <span class="hero-badge">Oak Lam Parquet</span>
+
+            <h1>Oak Lam Parquet</h1>
+
+            <p>
+                Oak Lam Parquet is a natural oak flooring solution that combines
+                durability, sustainability, and the timeless beauty of wood.
+                Manufactured from carefully selected oak timber, it is suitable
+                for residential, commercial, and interior design projects.
+            </p>
+
+            <p>
+                EURO-LAM produces oak lam parquet from premium-quality oak wood
+                while maintaining high standards of dimensional accuracy,
+                material stability, and surface quality.
+            </p>
+
+            <a href="#specifications" class="btn">
+                Technical Specifications
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/lamparket.jpg" alt="Oak Lam Parquet">
+        </div>
+
+    </section>
+
+    <h2 id="specifications">Technical Specifications</h2>
+
+    <table class="product-table">
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+        </tr>
+
+        <tr>
+            <td>Wood Species</td>
+            <td>Oak</td>
+        </tr>
+
+        <tr>
+            <td>Product Type</td>
+            <td>Oak Lam Parquet</td>
+        </tr>
+
+        <tr>
+            <td>Thickness</td>
+            <td>10–14 mm</td>
+        </tr>
+
+        <tr>
+            <td>Width</td>
+            <td>60–70 mm</td>
+        </tr>
+
+        <tr>
+            <td>Length</td>
+            <td>300–500 mm</td>
+        </tr>
+
+        <tr>
+            <td>Production</td>
+            <td>Custom-made</td>
+        </tr>
+    </table>
+
+    <p class="note">
+        * Dimensions may vary according to customer requirements.
+    </p>
+
+    <h2>Photo Gallery</h2>
+
+    <div class="gallery">
+
+        <img src="images/lamparket1.jpg" alt="Oak Lam Parquet">
+ 
+    </div>
+
+    <h2>Production Process</h2>
+
+    <p>
+        Oak lam parquet is manufactured from carefully selected oak timber
+        that undergoes drying, calibration, and precision machining using
+        modern woodworking equipment.
+    </p>
+
+    <p>
+        Moisture control and dimensional accuracy ensure product stability,
+        durability, and consistent quality of the finished flooring.
+    </p>
+
+    <p>
+        EURO-LAM operates a full production cycle, from raw material
+        preparation to packaging of finished parquet products for domestic
+        and international markets.
+    </p>
+
+    <a href="en-index.html" class="btn">
+        ← Back to Home
+    </a>
+
+</section>
+
+<a href="#" class="to-top">↑</a>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+const galleryImages = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+   <body>
+
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="EURO-LAM">
+    </div>
+
+<nav>
+    <a href="index.html">← Головна</a>
+</nav>
+
+</header>
+
+<section class="section product-page">
+
+<section class="product-hero">
+
+    <div class="hero-text">
+
+        <span class="hero-badge">Модульний дубовий паркет</span>
+
+        <h1>Модульний дубовий паркет</h1>
+
+        <p>
+            Модульний дубовий паркет — це декоративне підлогове покриття з натурального дуба,
+            яке виготовляється у вигляді готових модулів із різними схемами складання.
+            Продукція поєднує природну красу деревини, високу міцність та широкі можливості
+            для створення індивідуального дизайну інтер'єру.
+        </p>
+
+        <p>
+            ТОВ «ЄВРО-ЛАМ» виготовляє модульний паркет за стандартними та індивідуальними
+            схемами укладання. Серед доступних варіантів — класичний візерунок «Версаль»,
+            а також інші декоративні композиції відповідно до побажань замовника.
+        </p>
+
+        <a href="#specifications" class="btn">
+            Технічні характеристики
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="images/versailles.jpg" alt="Модульний дубовий паркет">
+    </div>
+
+</section>
+
+<h2 id="specifications">Технічні характеристики</h2>
+
+<table class="product-table">
+
+    <tr>
+        <th>Параметр</th>
+        <th>Значення</th>
+    </tr>
+
+    <tr>
+        <td>Порода деревини</td>
+        <td>Дуб</td>
+    </tr>
+
+    <tr>
+        <td>Тип продукції</td>
+        <td>Модульний дубовий паркет</td>
+    </tr>
+
+    <tr>
+        <td>Схеми складання</td>
+        <td>Версаль, Версаче </td>
+    </tr>
+
+    <tr>
+        <td>Розмір модуля</td>
+        <td>980 × 980 мм / 1000 × 1000 мм*</td>
+    </tr>
+
+    <tr>
+        <td>Виготовлення</td>
+        <td>За індивідуальним замовленням</td>
+    </tr>
+
+</table>
+
+<p class="note">
+    * Розміри модулів та схеми складання можуть змінюватися відповідно до вимог замовника.
+</p>
+
+<h2>Варіанти модулів та схем складання</h2>
+
+<div class="gallery">
+
+    <img src="images/versailles1.jpg" >
+
+    <img src="images/versailles2.jpg" >
+
+    <img src="images/versailles3.jpg" >
+
+
+</div>
+
+<h2>Виробництво</h2>
+
+<p>
+    Виробництво модульного дубового паркету включає ретельний відбір якісної дубової сировини,
+    сушіння деревини, точний розкрій елементів та формування готових модулів відповідно до
+    обраної схеми складання.
+</p>
+
+<p>
+    Завдяки сучасному обладнанню забезпечується висока точність геометрії кожного елемента,
+    що гарантує якісне складання модулів та надійність підлогового покриття.
+</p>
+
+<p>
+    Підприємство виготовляє як класичні модулі у стилі «Версаль», так і інші варіанти
+    декоративних схем відповідно до дизайнерських рішень та побажань замовника.
+</p>
+
+<a href="index.html" class="btn">
+    ← Повернутися на головну
+</a>
+
+</section>
+
+<a href="#" class="to-top">↑</a>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модульний дубовий паркет | EURO-LAM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+const galleryImages = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <body>
+
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="EURO-LAM">
+    </div>
+
+    <nav>
+        <a href="en-index.html">← Home</a>
+    </nav>
+</header>
+
+<section class="section product-page">
+
+    <section class="product-hero">
+        <div class="hero-text">
+            <span class="hero-badge">Eco-friendly solid fuel</span>
+
+            <h1>NESTRO Fuel Briquettes</h1>
+
+            <p>
+                Eco-friendly solid fuel produced from compressed wood biomass,
+                offering high calorific value, low moisture content and
+                long-lasting combustion for residential and industrial use.
+            </p>
+
+            <a href="#specifications" class="btn">
+                Technical Specifications
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/briquettes.jpg" alt="NESTRO Fuel Briquettes">
+        </div>
+    </section>
+
+    <h2 id="specifications">Technical Specifications</h2>
+
+    <table class="product-table">
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+        </tr>
+
+        <tr>
+            <td>Briquette Type</td>
+            <td>NESTRO</td>
+        </tr>
+
+        <tr>
+            <td>Raw Material</td>
+            <td>Wood sawdust and woodworking residues</td>
+        </tr>
+
+        <tr>
+            <td>Shape</td>
+            <td>Cylindrical</td>
+        </tr>
+
+        <tr>
+            <td>Diameter</td>
+            <td>70 mm</td>
+        </tr>
+
+        <tr>
+            <td>Length</td>
+            <td>240 mm</td>
+        </tr>
+
+        <tr>
+            <td>Moisture Content</td>
+            <td>Up to 10%</td>
+        </tr>
+
+        <tr>
+            <td>Ash Content</td>
+            <td>Up to 1%</td>
+        </tr>
+    </table>
+
+
+    <h2>Photo Gallery</h2>
+
+    <div class="gallery">
+        <img src="images/briquettes-warehouse.jpg" alt="Finished product storage">
+        <img src="images/briquettes-pallet.jpg" alt="Packed NESTRO briquettes">
+        <img src="images/briquette-cross-section.jpg" alt="NESTRO briquette cross-section">
+        <img src="images/briquette-side.jpg" alt="NESTRO briquette side view">
+    </div>
+
+    <h2>Production Process</h2>
+
+    <p>
+        NESTRO briquettes are produced by compressing dried wood raw materials
+        under high pressure without the use of chemical additives or binding agents.
+    </p>
+
+    <p>
+        During the pressing process, natural lignin contained in wood provides
+        the strength and integrity of the finished briquettes. The finished products
+        undergo quality control and are packaged for storage and transportation.
+    </p>
+
+    <a href="en-index.html" class="btn">← Back to Home</a>
+
+</section>
+
+<a href="#" class="to-top">↑</a>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NESTRO Fuel Briquettes | EURO-LAM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+const galleryImages = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+</script>
+
+</body>
+</html>
