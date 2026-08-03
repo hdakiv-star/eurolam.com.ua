@@ -5,8 +5,10 @@
 
 <header class="header">
     <div class="logo">
-        <img src="logo.png" alt="EURO-LAM">
-    </div>
+        <a href="index.html" aria-label="Головна">
+          <img src="logo.png" alt="EURO-LAM">
+        </a>
+      </div>
 
     <nav>
         <a href="index.html">← Головна</a>
@@ -151,6 +153,12 @@ closeBtn.addEventListener('click', () => {
 
 lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
         lightbox.style.display = 'none';
     }
 });
