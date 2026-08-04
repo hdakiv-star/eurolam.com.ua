@@ -1,178 +1,227 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-<head>
-  <body>
-
-<header class="header">
-    <div class="logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modular Oak Parquet | EURO-LAM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="scroll-toggle-ready">
+    <header class="header">
+      <div class="logo">
         <a href="en-index.html" aria-label="Home">
-          <img src="logo.png" alt="EURO-LAM">
+          <img src="logo.png" alt="EURO-LAM" />
         </a>
       </div>
 
-<nav>
-    <a href="en-index.html">← Home</a>
-</nav>
+      <nav aria-label="Page navigation">
+        <a href="en-index.html">← Home</a>
+        <a href="versailles.html" class="lang-switch lang-ua">UA</a>
+        <a href="en-versailles.html" class="lang-switch lang-en">EN</a>
+      </nav>
+    </header>
 
-</header>
-
-<section class="section product-page">
-
-<section class="product-hero">
-
-    <div class="hero-text">
-
-        <span class="hero-badge">Modular Oak Parquet</span>
+    <main id="main-content">
+      <section class="section product-page">
+        <section class="product-hero">
+          <div class="hero-text">
+            <span class="hero-badge">Modular Oak Parquet</span>
 
             <h1>Modular Oak Parquet</h1>
 
+            <p>
+              Modular oak parquet is a decorative flooring solution made from
+              natural oak and produced in the form of ready-made modules with
+              various layout patterns. It combines the natural beauty of wood,
+              durability, and extensive possibilities for creating unique
+              interior designs.
+            </p>
+
+            <p>
+              EURO-LAM manufactures modular parquet according to both standard
+              and custom layout patterns. Available options include the classic
+              Versailles and Versace designs, as well as other decorative
+              compositions developed according to customer requirements.
+            </p>
+
+            <a href="#specifications" class="btn">Technical Specifications</a>
+          </div>
+
+          <div class="hero-image">
+            <img src="images/versailles.jpg" alt="Modular Oak Parquet" />
+          </div>
+        </section>
+
+        <h2 id="specifications">Technical Specifications</h2>
+
+        <table class="product-table">
+          <caption class="visually-hidden">
+            Technical specifications of modular oak parquet
+          </caption>
+          <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+          </tr>
+          <tr>
+            <td>Wood Species</td>
+            <td>Oak</td>
+          </tr>
+          <tr>
+            <td>Product Type</td>
+            <td>Modular Oak Parquet</td>
+          </tr>
+          <tr>
+            <td>Layout Patterns</td>
+            <td>Versailles, Versace</td>
+          </tr>
+          <tr>
+            <td>Module Size</td>
+            <td>980 × 980 mm / 1000 × 1000 mm*</td>
+          </tr>
+          <tr>
+            <td>Production</td>
+            <td>Custom-made</td>
+          </tr>
+        </table>
+
+        <p class="note">
+          * Module dimensions and layout patterns may vary according to customer
+          requirements.
+        </p>
+
+        <h2>Module Designs and Layout Patterns</h2>
+
+        <div class="gallery">
+          <img
+            src="images/versailles1.jpg"
+            alt="Versailles parquet module design - variant 1"
+            loading="lazy"
+          />
+          <img
+            src="images/versailles2.jpg"
+            alt="Versailles parquet module design - variant 2"
+            loading="lazy"
+          />
+          <img
+            src="images/versailles3.jpg"
+            alt="Versailles parquet module design - variant 3"
+            loading="lazy"
+          />
+        </div>
+
+        <h2>Production Process</h2>
+
         <p>
-            Modular oak parquet is a decorative flooring solution made from
-            natural oak and produced in the form of ready-made modules with
-            various layout patterns. It combines the natural beauty of wood,
-            durability, and extensive possibilities for creating unique
-            interior designs.
+          The production of modular oak parquet includes careful selection of
+          high-quality oak timber, kiln drying, precise machining of individual
+          elements, and assembly of ready-made modules according to the selected
+          layout pattern.
         </p>
 
         <p>
-            EURO-LAM manufactures modular parquet according to both standard
-            and custom layout patterns. Available options include the classic
-            Versailles and Versace designs, as well as other decorative
-            compositions developed according to customer requirements.
+          Modern woodworking equipment ensures high dimensional accuracy of each
+          component, providing excellent fitting quality, structural stability,
+          and a premium appearance after installation.
         </p>
 
-        <a href="#specifications" class="btn">
-            Technical Specifications
-        </a>
+        <p>
+          EURO-LAM manufactures both classic Versailles-style modules and other
+          decorative layout patterns according to individual design concepts and
+          customer preferences.
+        </p>
 
-        </div>
+        <a href="en-index.html" class="btn">← Back to Home</a>
+      </section>
+    </main>
 
-        <div class="hero-image">
-            <img src="images/versailles.jpg" alt="Modular Oak Parquet">
-        </div>
+    <a href="#" class="to-top" aria-label="Back to top">↑</a>
 
-</section>
+    <dialog id="lightbox" class="lightbox" aria-label="Image preview">
+      <button class="close" type="button" aria-label="Close preview">
+        &times;
+      </button>
+      <img class="lightbox-content" id="lightbox-img" alt="" />
+    </dialog>
 
-<h2 id="specifications">Technical Specifications</h2>
+    <script>
+      (() => {
+        const galleryImages = Array.from(
+          document.querySelectorAll(".gallery img"),
+        );
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+        const toTopButton = document.querySelector(".to-top");
 
-<table class="product-table">
+        let lastFocusedImage = null;
 
-    <tr>
-        <th>Parameter</th>
-        <th>Value</th>
-    </tr>
+        const openLightbox = (img) => {
+          lastFocusedImage = img;
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          } else {
+            lightbox.style.display = "flex";
+          }
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || "Expanded image";
+          closeBtn.focus();
+        };
 
-    <tr>
-        <td>Wood Species</td>
-        <td>Oak</td>
-    </tr>
+        const closeLightbox = () => {
+          if (typeof lightbox.close === "function") {
+            lightbox.close();
+          } else {
+            lightbox.style.display = "none";
+          }
+          if (lastFocusedImage) {
+            lastFocusedImage.focus();
+          }
+        };
 
-    <tr>
-        <td>Product Type</td>
-        <td>Modular Oak Parquet</td>
-    </tr>
+        galleryImages.forEach((img, index) => {
+          const imageLabel = img.alt || `Image ${index + 1}`;
+          img.tabIndex = 0;
+          img.setAttribute("role", "button");
+          img.setAttribute("aria-label", `Open image: ${imageLabel}`);
 
-    <tr>
-        <td>Layout Patterns</td>
-        <td>Versailles, Versace</td>
-    </tr>
+          img.addEventListener("click", () => openLightbox(img));
+          img.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
 
-    <tr>
-        <td>Module Size</td>
-        <td>980 × 980 mm / 1000 × 1000 mm*</td>
-    </tr>
+        closeBtn.addEventListener("click", closeLightbox);
 
-    <tr>
-        <td>Production</td>
-        <td>Custom-made</td>
-    </tr>
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
 
-</table>
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            (lightbox.open || lightbox.style.display === "flex")
+          ) {
+            closeLightbox();
+          }
+        });
 
-<p class="note">
-    * Module dimensions and layout patterns may vary according to customer requirements.
-</p>
+        if (toTopButton) {
+          const updateToTopVisibility = () => {
+            document.body.classList.toggle("show-to-top", window.scrollY > 200);
+          };
 
-<h2>Module Designs and Layout Patterns</h2>
-
-<div class="gallery">
-
-     <img src="images/versailles1.jpg" >
-
-    <img src="images/versailles2.jpg" >
-
-    <img src="images/versailles3.jpg" >
-
-</div>
-
-<h2>Production Process</h2>
-
-<p>
-    The production of modular oak parquet includes careful selection of
-    high-quality oak timber, kiln drying, precise machining of individual
-    elements, and assembly of ready-made modules according to the selected
-    layout pattern.
-</p>
-
-<p>
-    Modern woodworking equipment ensures high dimensional accuracy of each
-    component, providing excellent fitting quality, structural stability,
-    and a premium appearance after installation.
-</p>
-
-<p>
-    EURO-LAM manufactures both classic Versailles-style modules and other
-    decorative layout patterns according to individual design concepts and
-    customer preferences.
-</p>
-
-<a href="en-index.html" class="btn">
-    ← Back to Home
-</a>
-
-</section>
-
-<a href="#" class="to-top">↑</a>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modular Oak Parquet | EURO-LAM</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-</div>
-
-<script>
-const galleryImages = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close');
-
-galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-    });
-});
-
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
-
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-    }
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-        lightbox.style.display = 'none';
-    }
-});
-</script>
-
-</body>
+          window.addEventListener("scroll", updateToTopVisibility, {
+            passive: true,
+          });
+          window.addEventListener("resize", updateToTopVisibility);
+          updateToTopVisibility();
+        }
+      })();
+    </script>
+  </body>
 </html>

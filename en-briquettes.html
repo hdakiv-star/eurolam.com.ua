@@ -1,156 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <body>
-
-<header class="header">
-    <div class="logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NESTRO Fuel Briquettes | EURO-LAM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="scroll-toggle-ready">
+    <header class="header">
+      <div class="logo">
         <a href="en-index.html" aria-label="Home">
-          <img src="logo.png" alt="EURO-LAM">
+          <img src="logo.png" alt="EURO-LAM" />
         </a>
       </div>
 
-    <nav>
+      <nav aria-label="Page navigation">
         <a href="en-index.html">← Home</a>
-    </nav>
-</header>
+        <a href="briquettes.html" class="lang-switch lang-ua">UA</a>
+        <a href="en-briquettes.html" class="lang-switch lang-en">EN</a>
+      </nav>
+    </header>
 
-<section class="section product-page">
-
-    <section class="product-hero">
-        <div class="hero-text">
+    <main id="main-content">
+      <section class="section product-page">
+        <section class="product-hero">
+          <div class="hero-text">
             <span class="hero-badge">Eco-friendly solid fuel</span>
 
             <h1>NESTRO Fuel Briquettes</h1>
 
             <p>
-                Eco-friendly solid fuel produced from compressed wood biomass,
-                offering high calorific value, low moisture content and
-                long-lasting combustion for residential and industrial use.
+              Eco-friendly solid fuel produced from compressed wood biomass,
+              offering high calorific value, low moisture content and
+              long-lasting combustion for residential and industrial use.
             </p>
 
-            <a href="#specifications" class="btn">
-                Technical Specifications
-            </a>
+            <a href="#specifications" class="btn">Technical Specifications</a>
+          </div>
 
-        </div>
+          <div class="hero-image">
+            <img src="images/briquettes.jpg" alt="NESTRO Fuel Briquettes" />
+          </div>
+        </section>
 
-        <div class="hero-image">
-            <img src="images/briquettes.jpg" alt="NESTRO Fuel Briquettes">
-        </div>
-    </section>
+        <h2 id="specifications">Technical Specifications</h2>
 
-    <h2 id="specifications">Technical Specifications</h2>
-
-    <table class="product-table">
-        <tr>
-            <th>Parameter</th>
-            <th>Value</th>
-        </tr>
-
-        <tr>
+        <table class="product-table">
+          <caption class="visually-hidden">
+            Technical specifications of NESTRO fuel briquettes
+          </caption>
+          <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+          </tr>
+          <tr>
             <td>Briquette Type</td>
             <td>NESTRO</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Raw Material</td>
             <td>Wood sawdust and woodworking residues</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Shape</td>
             <td>Cylindrical</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Diameter</td>
             <td>70 mm</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Length</td>
             <td>240 mm</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Moisture Content</td>
             <td>Up to 10%</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Ash Content</td>
             <td>Up to 1%</td>
-        </tr>
-    </table>
+          </tr>
+        </table>
 
+        <h2>Photo Gallery</h2>
 
-    <h2>Photo Gallery</h2>
+        <div class="gallery">
+          <img
+            src="images/briquettes-warehouse.jpg"
+            alt="Storage area with finished NESTRO briquettes"
+            loading="lazy"
+          />
+          <img
+            src="images/briquettes-pallet.jpg"
+            alt="Palletized NESTRO fuel briquettes"
+            loading="lazy"
+          />
+          <img
+            src="images/briquette-cross-section.jpg"
+            alt="Cross-section of a NESTRO fuel briquette"
+            loading="lazy"
+          />
+          <img
+            src="images/briquette-side.jpg"
+            alt="Side view of a NESTRO fuel briquette"
+            loading="lazy"
+          />
+        </div>
 
-    <div class="gallery">
-        <img src="images/briquettes-warehouse.jpg" alt="Finished product storage">
-        <img src="images/briquettes-pallet.jpg" alt="Packed NESTRO briquettes">
-        <img src="images/briquette-cross-section.jpg" alt="NESTRO briquette cross-section">
-        <img src="images/briquette-side.jpg" alt="NESTRO briquette side view">
-    </div>
+        <h2>Production Process</h2>
 
-    <h2>Production Process</h2>
+        <p>
+          NESTRO briquettes are produced by compressing dried wood raw materials
+          under high pressure without the use of chemical additives or binding
+          agents.
+        </p>
 
-    <p>
-        NESTRO briquettes are produced by compressing dried wood raw materials
-        under high pressure without the use of chemical additives or binding agents.
-    </p>
+        <p>
+          During the pressing process, natural lignin contained in wood provides
+          the strength and integrity of the finished briquettes. The finished
+          products undergo quality control and are packaged for storage and
+          transportation.
+        </p>
 
-    <p>
-        During the pressing process, natural lignin contained in wood provides
-        the strength and integrity of the finished briquettes. The finished products
-        undergo quality control and are packaged for storage and transportation.
-    </p>
+        <a href="en-index.html" class="btn">← Back to Home</a>
+      </section>
+    </main>
 
-    <a href="en-index.html" class="btn">← Back to Home</a>
+    <a href="#" class="to-top" aria-label="Back to top">↑</a>
 
-</section>
+    <dialog id="lightbox" class="lightbox" aria-label="Image preview">
+      <button class="close" type="button" aria-label="Close preview">
+        &times;
+      </button>
+      <img class="lightbox-content" id="lightbox-img" alt="" />
+    </dialog>
 
-<a href="#" class="to-top">↑</a>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NESTRO Fuel Briquettes | EURO-LAM</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" alt="Expanded gallery view">
-</div>
+    <script>
+      (() => {
+        const galleryImages = Array.from(
+          document.querySelectorAll(".gallery img"),
+        );
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+        const toTopButton = document.querySelector(".to-top");
 
-<script>
-const galleryImages = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close');
+        let lastFocusedImage = null;
 
-galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-    });
-});
+        const openLightbox = (img) => {
+          lastFocusedImage = img;
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          } else {
+            lightbox.style.display = "flex";
+          }
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || "Expanded image";
+          closeBtn.focus();
+        };
 
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
+        const closeLightbox = () => {
+          if (typeof lightbox.close === "function") {
+            lightbox.close();
+          } else {
+            lightbox.style.display = "none";
+          }
+          if (lastFocusedImage) {
+            lastFocusedImage.focus();
+          }
+        };
 
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-    }
-});
+        galleryImages.forEach((img, index) => {
+          const imageLabel = img.alt || `Image ${index + 1}`;
+          img.tabIndex = 0;
+          img.setAttribute("role", "button");
+          img.setAttribute("aria-label", `Open image: ${imageLabel}`);
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-        lightbox.style.display = 'none';
-    }
-});
-</script>
+          img.addEventListener("click", () => openLightbox(img));
+          img.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
 
-</body>
+        closeBtn.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            (lightbox.open || lightbox.style.display === "flex")
+          ) {
+            closeLightbox();
+          }
+        });
+
+        if (toTopButton) {
+          const updateToTopVisibility = () => {
+            document.body.classList.toggle("show-to-top", window.scrollY > 200);
+          };
+
+          window.addEventListener("scroll", updateToTopVisibility, {
+            passive: true,
+          });
+          window.addEventListener("resize", updateToTopVisibility);
+          updateToTopVisibility();
+        }
+      })();
+    </script>
+  </body>
 </html>

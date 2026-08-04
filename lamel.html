@@ -1,168 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-    <body>
-
-<header class="header">
-    <div class="logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ламель | EURO-LAM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="scroll-toggle-ready">
+    <header class="header">
+      <div class="logo">
         <a href="index.html" aria-label="Головна">
-          <img src="logo.png" alt="EURO-LAM">
+          <img src="logo.png" alt="EURO-LAM" />
         </a>
       </div>
 
-    <nav>
+      <nav aria-label="Навігація сторінки">
         <a href="index.html">← Головна</a>
-    </nav>
-</header>
+        <a href="lamel.html" class="lang-switch lang-ua">UA</a>
+        <a href="en-lamel.html" class="lang-switch lang-en">EN</a>
+      </nav>
+    </header>
 
-<section class="section product-page">
-
-    <section class="product-hero">
-
-        <div class="hero-text">
-
+    <main id="main-content">
+      <section class="section product-page">
+        <section class="product-hero">
+          <div class="hero-text">
             <span class="hero-badge">Натуральна дубова ламель</span>
 
             <h1>Ламель</h1>
 
             <p>
-                Високоякісна дубова ламель для виробництва паркетної та інженерної дошки.
-                Продукція відзначається точною геометрією, стабільною вологістю та
-                відповідністю сучасним вимогам деревообробної галузі.
+              Високоякісна дубова ламель для виробництва паркетної та інженерної
+              дошки. Продукція відзначається точною геометрією, стабільною
+              вологістю та відповідністю сучасним вимогам деревообробної галузі.
             </p>
 
-            <a href="#specifications" class="btn">
-                Технічні характеристики
-            </a>
+            <a href="#specifications" class="btn">Технічні характеристики</a>
+          </div>
 
-        </div>
+          <div class="hero-image">
+            <img src="images/lamel.jpg" alt="Ламель" />
+          </div>
+        </section>
 
-        <div class="hero-image">
-            <img src="images/lamel.jpg" alt="Ламель">
-        </div>
+        <h2 id="specifications">Технічні характеристики</h2>
 
-    </section>
-
-    <h2 id="specifications">Технічні характеристики</h2>
-
-    <table class="product-table">
-
-        <tr>
-            <th>Параметр</th>
-            <th>Значення</th>
-        </tr>
-
-        <tr>
+        <table class="product-table">
+          <caption class="visually-hidden">
+            Технічні характеристики дубової ламелі
+          </caption>
+          <tr>
+            <th scope="col">Параметр</th>
+            <th scope="col">Значення</th>
+          </tr>
+          <tr>
             <td>Порода деревини</td>
             <td>Дуб</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Вологість</td>
             <td>7 ± 2%</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Сортність</td>
             <td>А, В, C, D</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Товщина</td>
             <td>3,2 - 4,2 мм*</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Ширина</td>
             <td>98 - 310 мм*</td>
-        </tr>
-
-        <tr>
+          </tr>
+          <tr>
             <td>Довжина</td>
-            <td>620 – 2420 мм*</td>
-        </tr>
+            <td>620 - 2420 мм*</td>
+          </tr>
+        </table>
 
-    </table>
+        <p class="note">
+          * Параметри можуть змінюватися відповідно до вимог замовника.
+        </p>
 
-    <p class="note">
-        * Параметри можуть змінюватися відповідно до вимог замовника.
-    </p>
+        <h2>Фотогалерея</h2>
 
-    <h2>Фотогалерея</h2>
+        <div class="gallery">
+          <img
+            src="images/lamel-finished.jpg"
+            alt="Готова дубова ламель"
+            loading="lazy"
+          />
+        </div>
 
-<div class="gallery">
+        <h2>Виробництво</h2>
 
-        <img src="images/lamel-finished.jpg" alt="Готова продукція">
-   
+        <p>
+          Виробництво ламелі включає ретельний відбір дубової сировини, сушіння
+          деревини, механічну обробку та контроль геометричних параметрів на
+          кожному етапі технологічного процесу.
+        </p>
 
+        <p>
+          Завдяки сучасному обладнанню та системі контролю якості продукція
+          характеризується стабільними технічними показниками та високою
+          точністю виготовлення.
+        </p>
 
-</div>
+        <p>
+          Готова ламель проходить фінальну перевірку якості, пакується та
+          готується до подальшого використання у виробництві підлогових
+          покриттів.
+        </p>
 
-    <h2>Виробництво</h2>
+        <a href="index.html" class="btn">← Повернутися на головну</a>
+      </section>
+    </main>
 
-    <p>
-        Виробництво ламелі включає ретельний відбір дубової сировини,
-        сушіння деревини, механічну обробку та контроль геометричних параметрів
-        на кожному етапі технологічного процесу.
-    </p>
+    <a href="#" class="to-top" aria-label="Повернутися нагору">↑</a>
 
-    <p>
-        Завдяки сучасному обладнанню та системі контролю якості продукція
-        характеризується стабільними технічними показниками та високою точністю
-        виготовлення.
-    </p>
+    <dialog id="lightbox" class="lightbox" aria-label="Перегляд зображення">
+      <button class="close" type="button" aria-label="Закрити перегляд">
+        &times;
+      </button>
+      <img
+        class="lightbox-content"
+        id="lightbox-img"
+        alt="Збільшене зображення галереї"
+      />
+    </dialog>
 
-    <p>
-        Готова ламель проходить фінальну перевірку якості, пакується та
-        готується до подальшого використання у виробництві підлогових покриттів.
-    </p>
+    <script>
+      (() => {
+        const galleryImages = Array.from(
+          document.querySelectorAll(".gallery img"),
+        );
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+        const toTopButton = document.querySelector(".to-top");
 
-    <a href="index.html" class="btn">
-        ← Повернутися на головну
-    </a>
+        let lastFocusedImage = null;
 
-</section>
+        const openLightbox = (img) => {
+          lastFocusedImage = img;
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          } else {
+            lightbox.style.display = "flex";
+          }
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || "Збільшене зображення";
+          closeBtn.focus();
+        };
 
-<a href="#" class="to-top">↑</a>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ламель | EURO-LAM</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-</div>
+        const closeLightbox = () => {
+          if (typeof lightbox.close === "function") {
+            lightbox.close();
+          } else {
+            lightbox.style.display = "none";
+          }
+          if (lastFocusedImage) {
+            lastFocusedImage.focus();
+          }
+        };
 
-<script>
-const galleryImages = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close');
+        galleryImages.forEach((img, index) => {
+          const imageLabel = img.alt || `Зображення ${index + 1}`;
+          img.tabIndex = 0;
+          img.setAttribute("role", "button");
+          img.setAttribute("aria-label", `Відкрити зображення: ${imageLabel}`);
 
-galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-    });
-});
+          img.addEventListener("click", () => openLightbox(img));
+          img.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
 
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
+        closeBtn.addEventListener("click", closeLightbox);
 
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-    }
-});
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-        lightbox.style.display = 'none';
-    }
-});
-</script>
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            (lightbox.open || lightbox.style.display === "flex")
+          ) {
+            closeLightbox();
+          }
+        });
 
-</body>
+        if (toTopButton) {
+          const updateToTopVisibility = () => {
+            document.body.classList.toggle("show-to-top", window.scrollY > 200);
+          };
+
+          window.addEventListener("scroll", updateToTopVisibility, {
+            passive: true,
+          });
+          window.addEventListener("resize", updateToTopVisibility);
+          updateToTopVisibility();
+        }
+      })();
+    </script>
+  </body>
 </html>

@@ -1,163 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <body>
-
-<header class="header">
-    <div class="logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Паливні брикети NESTRO | EURO-LAM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="scroll-toggle-ready">
+    <header class="header">
+      <div class="logo">
         <a href="index.html" aria-label="Головна">
-          <img src="logo.png" alt="EURO-LAM">
+          <img src="logo.png" alt="EURO-LAM" />
         </a>
       </div>
 
-    <nav>
+      <nav aria-label="Навігація сторінки">
         <a href="index.html">← Головна</a>
-    </nav>
-</header>
+        <a href="briquettes.html" class="lang-switch lang-ua">UA</a>
+        <a href="en-briquettes.html" class="lang-switch lang-en">EN</a>
+      </nav>
+    </header>
 
-<section class="section product-page">
-    <section class="product-hero">
-
-    <div class="hero-text">
-
-       <span class="hero-badge">Екологічне тверде паливо</span>
+    <main id="main-content">
+      <section class="section product-page">
+        <section class="product-hero">
+          <div class="hero-text">
+            <span class="hero-badge">Екологічне тверде паливо</span>
 
             <h1>Паливні брикети NESTRO</h1>
 
+            <p>
+              Екологічне тверде паливо з деревної сировини, що характеризується
+              високою теплотворною здатністю, низькою вологістю та тривалим
+              часом горіння.
+            </p>
+
+            <a href="#specifications" class="btn"> Технічні характеристики </a>
+          </div>
+
+          <div class="hero-image">
+            <img src="images/briquettes.jpg" alt="Паливні брикети NESTRO" />
+          </div>
+        </section>
+
+        <h2 id="specifications">Технічні характеристики</h2>
+
+        <table class="product-table">
+          <caption class="visually-hidden">
+            Технічні характеристики паливних брикетів NESTRO
+          </caption>
+          <tr>
+            <th scope="col">Параметр</th>
+            <th scope="col">Значення</th>
+          </tr>
+          <tr>
+            <td>Тип брикетів</td>
+            <td>NESTRO</td>
+          </tr>
+          <tr>
+            <td>Сировина</td>
+            <td>Деревна тирса та відходи деревообробки</td>
+          </tr>
+          <tr>
+            <td>Форма</td>
+            <td>Циліндрична</td>
+          </tr>
+          <tr>
+            <td>Діаметр</td>
+            <td>70 мм</td>
+          </tr>
+          <tr>
+            <td>Довжина</td>
+            <td>240 мм</td>
+          </tr>
+          <tr>
+            <td>Вологість</td>
+            <td>до 10%</td>
+          </tr>
+          <tr>
+            <td>Зольність</td>
+            <td>до 1%</td>
+          </tr>
+        </table>
+
+        <h2>Фотогалерея</h2>
+
+        <div class="gallery">
+          <img
+            src="images/briquettes-warehouse.jpg"
+            alt="Склад паливних брикетів NESTRO"
+            loading="lazy"
+          />
+          <img
+            src="images/briquettes-pallet.jpg"
+            alt="Паливні брикети NESTRO на піддоні"
+            loading="lazy"
+          />
+          <img
+            src="images/briquette-cross-section.jpg"
+            alt="Поперечний зріз паливного брикету NESTRO"
+            loading="lazy"
+          />
+          <img
+            src="images/briquette-side.jpg"
+            alt="Бічний вигляд паливного брикету NESTRO"
+            loading="lazy"
+          />
+        </div>
+
+        <h2>Виробництво</h2>
+
         <p>
-            Екологічне тверде паливо з деревної сировини,
-            що характеризується високою теплотворною здатністю,
-            низькою вологістю та тривалим часом горіння.
+          Виробництво брикетів NESTRO здійснюється шляхом пресування висушеної
+          деревної сировини під високим тиском без використання хімічних домішок
+          та зв'язуючих речовин. У процесі пресування природний лігнін, що
+          міститься в деревині, забезпечує міцність та цілісність готових
+          брикетів.
         </p>
 
-        <a href="#specifications" class="btn">
-            Технічні характеристики
-        </a>
+        <p>
+          Готова продукція проходить контроль якості та пакується для подальшого
+          зберігання й транспортування споживачам.
+        </p>
 
-        </div>
+        <a href="index.html" class="btn">← Повернутися на головну</a>
+      </section>
+    </main>
 
-        <div class="hero-image">
-            <img src="images/briquettes.jpg" alt="Паливні брикети NESTRO">
-        </div>
+    <a href="#" class="to-top" aria-label="Повернутися нагору">↑</a>
 
-</section>
+    <dialog id="lightbox" class="lightbox" aria-label="Перегляд зображення">
+      <button class="close" type="button" aria-label="Закрити перегляд">
+        &times;
+      </button>
+      <img
+        class="lightbox-content"
+        id="lightbox-img"
+        alt="Збільшене зображення галереї"
+      />
+    </dialog>
 
-  <h2 id="specifications">Технічні характеристики</h2>
+    <script>
+      (() => {
+        const galleryImages = Array.from(
+          document.querySelectorAll(".gallery img"),
+        );
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+        const toTopButton = document.querySelector(".to-top");
 
-<table class="product-table">
-<tr>
-<th>Параметр</th>
-<th>Значення</th>
-</tr>
+        let lastFocusedImage = null;
 
-<tr>
-<td>Тип брикетів</td>
-<td>NESTRO</td>
-</tr>
+        const openLightbox = (img) => {
+          lastFocusedImage = img;
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          } else {
+            lightbox.style.display = "flex";
+          }
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || "Збільшене зображення";
+          closeBtn.focus();
+        };
 
-<tr>
-<td>Сировина</td>
-<td>Деревна тирса та відходи деревообробки</td>
-</tr>
+        const closeLightbox = () => {
+          if (typeof lightbox.close === "function") {
+            lightbox.close();
+          } else {
+            lightbox.style.display = "none";
+          }
+          if (lastFocusedImage) {
+            lastFocusedImage.focus();
+          }
+        };
 
-<tr>
-<td>Форма</td>
-<td>Циліндрична</td>
-</tr>
+        galleryImages.forEach((img, index) => {
+          const imageLabel = img.alt || `Зображення ${index + 1}`;
+          img.tabIndex = 0;
+          img.setAttribute("role", "button");
+          img.setAttribute("aria-label", `Відкрити зображення: ${imageLabel}`);
 
-<tr>
-<td>Діаметр</td>
-<td>70 мм</td>
-</tr>
+          img.addEventListener("click", () => openLightbox(img));
+          img.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
 
-<tr>
-<td>Довжина</td>
-<td>240 мм</td>
-</tr>
+        closeBtn.addEventListener("click", closeLightbox);
 
-<tr>
-<td>Вологість</td>
-<td>до 10%</td>
-</tr>
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
 
-<tr>
-<td>Зольність</td>
-<td>до 1%</td>
-</tr>
-</table>
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            (lightbox.open || lightbox.style.display === "flex")
+          ) {
+            closeLightbox();
+          }
+        });
 
-   
-    <h2>Фотогалерея</h2>
+        if (toTopButton) {
+          const updateToTopVisibility = () => {
+            document.body.classList.toggle("show-to-top", window.scrollY > 200);
+          };
 
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-</div>
-
-<div class="gallery">
-    <img src="images/briquettes-warehouse.jpg" alt="">
-    <img src="images/briquettes-pallet.jpg" alt="">
-    <img src="images/briquette-cross-section.jpg" alt="">
-    <img src="images/briquette-side.jpg" alt="">
-</div>
-
-    <h2>Виробництво</h2>
-
-    <p>
-        Виробництво брикетів NESTRO здійснюється шляхом пресування висушеної деревної
-        сировини під високим тиском без використання хімічних домішок та зв'язуючих речовин.
-        У процесі пресування природний лігнін, що міститься в деревині, забезпечує міцність
-        та цілісність готових брикетів.
-    </p>
-
-    <p>
-        Готова продукція проходить контроль якості та пакується для подальшого зберігання
-        й транспортування споживачам.
-    </p>
-
-    <a href="index.html" class="btn">← Повернутися на головну</a>
-</section>
-
-<a href="#" class="to-top">↑</a>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Паливні брикети NESTRO</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-</div>
-
-<script>
-const galleryImages = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close');
-
-galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-    });
-});
-
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
-
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-    }
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-        lightbox.style.display = 'none';
-    }
-});
-</script>
-
-</body>
+          window.addEventListener("scroll", updateToTopVisibility, {
+            passive: true,
+          });
+          window.addEventListener("resize", updateToTopVisibility);
+          updateToTopVisibility();
+        }
+      })();
+    </script>
+  </body>
 </html>
