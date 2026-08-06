@@ -1,0 +1,6 @@
+.github/**/*
+.agents/**/*
+docs/**/*
+
+AGENTS.md
+skills-lock.json

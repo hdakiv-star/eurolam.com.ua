@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лампаркет | ТОВ «ЄВРО-ЛАМ»</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="scroll-toggle-ready">
+    <header class="header">
+      <div class="logo">
+        <a href="index.html" aria-label="Головна">
+          <img src="logo.png" alt="EURO-LAM" />
+        </a>
+      </div>
+
+      <nav aria-label="Навігація сторінки">
+        <a href="index.html">← Головна</a>
+        <a href="lamparket.html" class="lang-switch lang-ua">UA</a>
+        <a href="en-lamparket.html" class="lang-switch lang-en">EN</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="section product-page">
+        <section class="product-hero">
+          <div class="hero-text">
+            <span class="hero-badge">Лампаркет</span>
+
+            <h1>Лампаркет</h1>
+
+            <p>
+              Лампаркет - натуральне дубове підлогове покриття, що поєднує
+              довговічність, екологічність та природну красу деревини.
+              Виготовляється з високоякісного дуба та підходить для житлових,
+              комерційних і дизайнерських проєктів.
+            </p>
+
+            <p>
+              ТОВ «ЄВРО-ЛАМ» виготовляє лампаркет із ретельно відібраної
+              деревини дуба з дотриманням вимог до точності розмірів,
+              стабільності матеріалу та якості поверхні.
+            </p>
+
+            <a href="#specifications" class="btn">Технічні характеристики</a>
+          </div>
+
+          <div class="hero-image">
+            <img src="images/lamparket.jpg" alt="Лампаркет" />
+          </div>
+        </section>
+
+        <h2 id="specifications">Технічні характеристики</h2>
+
+        <table class="product-table">
+          <caption class="visually-hidden">
+            Технічні характеристики лампаркету
+          </caption>
+          <tr>
+            <th scope="col">Параметр</th>
+            <th scope="col">Значення</th>
+          </tr>
+          <tr>
+            <td>Порода деревини</td>
+            <td>Дуб</td>
+          </tr>
+          <tr>
+            <td>Тип продукції</td>
+            <td>Лампаркет</td>
+          </tr>
+          <tr>
+            <td>Товщина</td>
+            <td>10-14 мм</td>
+          </tr>
+          <tr>
+            <td>Ширина</td>
+            <td>60-70 мм</td>
+          </tr>
+          <tr>
+            <td>Довжина</td>
+            <td>300-500 мм</td>
+          </tr>
+          <tr>
+            <td>Виробництво</td>
+            <td>Під замовлення</td>
+          </tr>
+        </table>
+
+        <p class="note">
+          * Розміри можуть уточнюватися відповідно до вимог замовника.
+        </p>
+
+        <h2>Фотогалерея</h2>
+
+        <div class="gallery">
+          <img
+            src="images/lamparket1.jpg"
+            alt="Лампаркет, готова продукція"
+            loading="lazy"
+          />
+        </div>
+
+        <h2>Виробництво лампаркету</h2>
+
+        <p>
+          Лампаркет виготовляється з високоякісної дубової деревини, що
+          проходить етапи сушіння, калібрування та механічної обробки на
+          сучасному обладнанні.
+        </p>
+
+        <p>
+          Контроль вологості та геометричних параметрів забезпечує стабільність
+          розмірів і високу якість готової продукції.
+        </p>
+
+        <p>
+          Підприємство здійснює повний цикл виробництва - від підготовки
+          сировини до пакування готового лампаркету для реалізації на
+          внутрішньому та зовнішньому ринках.
+        </p>
+
+        <a href="index.html" class="btn">← Повернутися на головну</a>
+      </section>
+    </main>
+
+    <a href="#" class="to-top" aria-label="Повернутися нагору">↑</a>
+
+    <dialog id="lightbox" class="lightbox" aria-label="Перегляд зображення">
+      <button class="close" type="button" aria-label="Закрити перегляд">
+        &times;
+      </button>
+      <img
+        class="lightbox-content"
+        id="lightbox-img"
+        alt="Збільшене зображення галереї"
+      />
+    </dialog>
+
+    <script>
+      (() => {
+        const galleryImages = Array.from(
+          document.querySelectorAll(".gallery img"),
+        );
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+        const toTopButton = document.querySelector(".to-top");
+
+        let lastFocusedImage = null;
+
+        const openLightbox = (img) => {
+          lastFocusedImage = img;
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          } else {
+            lightbox.style.display = "flex";
+          }
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || "Збільшене зображення";
+          closeBtn.focus();
+        };
+
+        const closeLightbox = () => {
+          if (typeof lightbox.close === "function") {
+            lightbox.close();
+          } else {
+            lightbox.style.display = "none";
+          }
+          if (lastFocusedImage) {
+            lastFocusedImage.focus();
+          }
+        };
+
+        galleryImages.forEach((img, index) => {
+          const imageLabel = img.alt || `Зображення ${index + 1}`;
+          img.tabIndex = 0;
+          img.setAttribute("role", "button");
+          img.setAttribute("aria-label", `Відкрити зображення: ${imageLabel}`);
+
+          img.addEventListener("click", () => openLightbox(img));
+          img.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
+
+        closeBtn.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            (lightbox.open || lightbox.style.display === "flex")
+          ) {
+            closeLightbox();
+          }
+        });
+
+        if (toTopButton) {
+          const updateToTopVisibility = () => {
+            document.body.classList.toggle("show-to-top", window.scrollY > 200);
+          };
+
+          window.addEventListener("scroll", updateToTopVisibility, {
+            passive: true,
+          });
+          window.addEventListener("resize", updateToTopVisibility);
+          updateToTopVisibility();
+        }
+      })();
+    </script>
+  </body>
+</html>
