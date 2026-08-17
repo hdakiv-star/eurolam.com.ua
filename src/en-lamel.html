@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oak Lamella Supplier — Kiln Dried, Custom Sizes | EURO-LAM</title>
+    <meta
+      name="description"
+      content="Kiln-dried oak lamellas for engineered flooring from a direct manufacturer. Custom sizes, stable volumes, export across the EU. Request a quote →"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://eurolam.com.ua/en-lamel.html" />
+    <link
+      rel="alternate"
+      hreflang="uk"
+      href="https://eurolam.com.ua/lamel.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://eurolam.com.ua/en-lamel.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://eurolam.com.ua/en-lamel.html"
+    />
+  </head>
+  <body class="scroll-toggle-ready">
+    <header class="header">
+      <div class="logo">
+        <a href="en-index.html" aria-label="Home">
+          <img src="logo.webp" alt="EURO-LAM" />
+        </a>
+      </div>
+
+      <nav aria-label="Page navigation">
+        <a href="en-index.html">← Home</a>
+        <a href="lamel.html" class="lang-switch lang-ua">UA</a>
+        <a href="en-lamel.html" class="lang-switch lang-en">EN</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="section product-page">
+        <section class="product-hero">
+          <div class="hero-text">
+            <span class="hero-badge">Natural Oak Lamella</span>
+
+            <h1>Oak Lamellas from the Manufacturer</h1>
+
+            <p>
+              Premium-quality oak lamella used in the production of parquet
+              flooring and engineered wood flooring. Manufactured from carefully
+              selected oak timber, it offers precise dimensions, controlled
+              moisture content and consistent quality for modern flooring
+              applications.
+            </p>
+
+            <a href="#specifications" class="btn">Technical Specifications</a>
+          </div>
+
+          <div class="hero-image">
+            <img src="images/lamel.webp" alt="Oak Lamella" />
+          </div>
+        </section>
+
+        <h2 id="specifications">Technical Specifications</h2>
+
+        <table class="product-table">
+          <caption class="visually-hidden">
+            Technical specifications of oak lamella
+          </caption>
+          <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+          </tr>
+          <tr>
+            <td>Wood Species</td>
+            <td>Oak</td>
+          </tr>
+          <tr>
+            <td>Moisture Content</td>
+            <td>7 ± 2%</td>
+          </tr>
+          <tr>
+            <td>Grade</td>
+            <td>A, B, C, D</td>
+          </tr>
+          <tr>
+            <td>Thickness</td>
+            <td>3,2 - 4,2 mm*</td>
+          </tr>
+          <tr>
+            <td>Width</td>
+            <td>98 - 310 mm*</td>
+          </tr>
+          <tr>
+            <td>Length</td>
+            <td>620 - 2420 mm*</td>
+          </tr>
+        </table>
+
+        <p class="note">
+          * Dimensions may vary according to customer requirements.
+        </p>
+
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+          <img
+            src="images/lamel-finished.webp"
+            alt="Finished oak lamella products"
+            loading="lazy"
+          />
+        </div>
+
+        <h2>Production Process</h2>
+
+        <p>
+          The manufacturing process begins with the careful selection of
+          high-quality oak timber, followed by controlled drying to achieve the
+          required moisture content.
+        </p>
+
+        <p>
+          The material is then processed using modern woodworking equipment to
+          ensure precise dimensions, accurate geometry and a high-quality
+          surface finish.
+        </p>
+
+        <p>
+          Throughout production, each batch undergoes quality control to verify
+          dimensional accuracy, moisture stability and product consistency
+          before being packaged and prepared for further use in flooring
+          production.
+        </p>
+
+        <a href="en-index.html" class="btn">← Back to Home</a>
+      </section>
+    </main>
+
+    <a href="#" class="to-top" aria-label="Back to top">↑</a>
+
+    <dialog id="lightbox" class="lightbox" aria-label="Image preview">
+      <button class="close" type="button" aria-label="Close preview">
+        &times;
+      </button>
+      <img class="lightbox-content" id="lightbox-img" alt="" />
+    </dialog>
+
+    <script>
+      (() => {
+        const galleryImages = Array.from(
+          document.querySelectorAll(".gallery img"),
+        );
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+        const toTopButton = document.querySelector(".to-top");
+
+        let lastFocusedImage = null;
+
+        const openLightbox = (img) => {
+          lastFocusedImage = img;
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          } else {
+            lightbox.style.display = "flex";
+          }
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || "Expanded image";
+          closeBtn.focus();
+        };
+
+        const closeLightbox = () => {
+          if (typeof lightbox.close === "function") {
+            lightbox.close();
+          } else {
+            lightbox.style.display = "none";
+          }
+          if (lastFocusedImage) {
+            lastFocusedImage.focus();
+          }
+        };
+
+        galleryImages.forEach((img, index) => {
+          const imageLabel = img.alt || `Image ${index + 1}`;
+          img.tabIndex = 0;
+          img.setAttribute("role", "button");
+          img.setAttribute("aria-label", `Open image: ${imageLabel}`);
+
+          img.addEventListener("click", () => openLightbox(img));
+          img.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
+
+        closeBtn.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            (lightbox.open || lightbox.style.display === "flex")
+          ) {
+            closeLightbox();
+          }
+        });
+
+        if (toTopButton) {
+          const updateToTopVisibility = () => {
+            document.body.classList.toggle("show-to-top", window.scrollY > 200);
+          };
+
+          window.addEventListener("scroll", updateToTopVisibility, {
+            passive: true,
+          });
+          window.addEventListener("resize", updateToTopVisibility);
+          updateToTopVisibility();
+        }
+      })();
+    </script>
+  </body>
+</html>

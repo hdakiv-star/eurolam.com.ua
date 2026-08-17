@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineered Oak Flooring Manufacturer Ukraine — EURO-LAM</title>
+    <meta
+      name="description"
+      content="Engineered oak flooring from a direct manufacturer in Ukraine: two-layer construction, custom dimensions and finishes. Wholesale prices, EU export."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="canonical"
+      href="https://eurolam.com.ua/en-engineered-board.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="uk"
+      href="https://eurolam.com.ua/engineered-board.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://eurolam.com.ua/en-engineered-board.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://eurolam.com.ua/en-engineered-board.html"
+    />
+  </head>
+  <body class="scroll-toggle-ready">
+    <header class="header">
+      <div class="logo">
+        <a href="en-index.html" aria-label="Home">
+          <img src="logo.webp" alt="EURO-LAM" />
+        </a>
+      </div>
+
+      <nav aria-label="Page navigation">
+        <a href="en-index.html">← Home</a>
+        <a href="engineered-board.html" class="lang-switch lang-ua">UA</a>
+        <a href="en-engineered-board.html" class="lang-switch lang-en">EN</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="section product-page">
+        <section class="product-hero">
+          <div class="hero-text">
+            <span class="hero-badge">Natural Oak Flooring</span>
+
+            <h1>Engineered Oak Flooring</h1>
+
+            <p>
+              A modern multi-layer flooring solution featuring a natural oak top
+              layer, combining elegant appearance, structural stability and
+              long-lasting durability.
+            </p>
+
+            <a href="#specifications" class="btn">Technical Specifications</a>
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="images/engineered-board3.webp"
+              alt="Engineered Parquet Board"
+            />
+          </div>
+        </section>
+
+        <h2 id="specifications">Technical Specifications</h2>
+
+        <table class="product-table">
+          <caption class="visually-hidden">
+            Technical specifications of engineered parquet board
+          </caption>
+          <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+          </tr>
+          <tr>
+            <td>Wood Species</td>
+            <td>Oak</td>
+          </tr>
+          <tr>
+            <td>Construction</td>
+            <td>Multi-layer</td>
+          </tr>
+          <tr>
+            <td>Thickness</td>
+            <td>10, 13, 16 mm*</td>
+          </tr>
+          <tr>
+            <td>Width</td>
+            <td>90-300 mm*</td>
+          </tr>
+          <tr>
+            <td>Length</td>
+            <td>500-2420 mm*</td>
+          </tr>
+        </table>
+
+        <p class="note">
+          * Dimensions may vary according to customer requirements.
+        </p>
+
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+          <img
+            src="images/engineered-board1.webp"
+            alt="Engineered parquet board - view 1"
+            loading="lazy"
+          />
+          <img
+            src="images/engineered-board2.webp"
+            alt="Engineered parquet board - view 2"
+            loading="lazy"
+          />
+          <img
+            src="images/engineered-board3.webp"
+            alt="Engineered parquet board - view 3"
+            loading="lazy"
+          />
+        </div>
+
+        <h2>Production Process</h2>
+
+        <p>
+          Engineered parquet boards are manufactured using advanced woodworking
+          technologies and multi-stage quality control procedures. The natural
+          oak top layer provides an authentic appearance and excellent wear
+          resistance.
+        </p>
+
+        <p>
+          The multi-layer construction enhances dimensional stability and
+          minimizes the risk of deformation caused by changes in temperature and
+          humidity. This makes engineered parquet boards a reliable solution for
+          both residential and commercial applications.
+        </p>
+
+        <p>
+          Finished products undergo quality inspections throughout the
+          production process and comply with high standards for modern flooring
+          solutions.
+        </p>
+
+        <a href="en-index.html" class="btn">← Back to Home</a>
+      </section>
+    </main>
+
+    <a href="#" class="to-top" aria-label="Back to top">↑</a>
+
+    <dialog id="lightbox" class="lightbox" aria-label="Image preview">
+      <button class="close" type="button" aria-label="Close preview">
+        &times;
+      </button>
+      <img class="lightbox-content" id="lightbox-img" alt="" />
+    </dialog>
+
+    <script>
+      (() => {
+        const galleryImages = Array.from(
+          document.querySelectorAll(".gallery img"),
+        );
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+        const toTopButton = document.querySelector(".to-top");
+
+        let lastFocusedImage = null;
+
+        const openLightbox = (img) => {
+          lastFocusedImage = img;
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          } else {
+            lightbox.style.display = "flex";
+          }
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || "Expanded image";
+          closeBtn.focus();
+        };
+
+        const closeLightbox = () => {
+          if (typeof lightbox.close === "function") {
+            lightbox.close();
+          } else {
+            lightbox.style.display = "none";
+          }
+          if (lastFocusedImage) {
+            lastFocusedImage.focus();
+          }
+        };
+
+        galleryImages.forEach((img, index) => {
+          const imageLabel = img.alt || `Image ${index + 1}`;
+          img.tabIndex = 0;
+          img.setAttribute("role", "button");
+          img.setAttribute("aria-label", `Open image: ${imageLabel}`);
+
+          img.addEventListener("click", () => openLightbox(img));
+          img.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
+
+        closeBtn.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            (lightbox.open || lightbox.style.display === "flex")
+          ) {
+            closeLightbox();
+          }
+        });
+
+        if (toTopButton) {
+          const updateToTopVisibility = () => {
+            document.body.classList.toggle("show-to-top", window.scrollY > 200);
+          };
+
+          window.addEventListener("scroll", updateToTopVisibility, {
+            passive: true,
+          });
+          window.addEventListener("resize", updateToTopVisibility);
+          updateToTopVisibility();
+        }
+      })();
+    </script>
+  </body>
+</html>
