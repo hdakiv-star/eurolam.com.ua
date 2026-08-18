@@ -1,0 +1,69 @@
+# ======================================================================
+# Конфігураційний файл Apache (.htaccess)
+# Проект: eurolam.com.ua
+# ======================================================================
+
+# ----------------------------------------------------------------------
+# 1. Перенаправлення (301 Redirects)
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    # Вмикаємо модуль перенаправлення URL-адрес
+    RewriteEngine On
+
+    # Виключення: НЕ перенаправляти запити перевірки SSL (Let's Encrypt)
+    RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+
+    # 1.1. Редирект з WWW на NON-WWW (www.eurolam.com.ua -> eurolam.com.ua)
+    RewriteCond %{HTTP_HOST} ^www\.(.+) [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    # 1.2. Редирект з HTTP на HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 2. Кешування статичних файлів (Cache-Control / Expires)
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+    # Вмикаємо модуль управління терміном придатності кешу
+    ExpiresActive On
+
+    # Базовий термін кешування за замовчуванням (1 місяць)
+    ExpiresDefault "access plus 1 month"
+
+    # Кешування зображень на 1 місяць (30 днів)
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+
+    # Кешування стилів (CSS) та скриптів (JS) на 1 місяць
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # Кешування веб-шрифтів на 1 рік
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Додаткове встановлення заголовку Cache-Control для браузерів
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|jpe?g|png|gif|webp|css|js|woff|woff2|ttf|svg)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 3. Фіксація кодування UTF-8
+# ----------------------------------------------------------------------
+AddDefaultCharset UTF-8
+
+<IfModule mod_mime.c>
+    AddCharset UTF-8 .html .css .js .xml .json
+</IfModule>
