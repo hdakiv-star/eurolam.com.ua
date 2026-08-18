@@ -117,7 +117,8 @@ html[lang="en"] .lang-switch.lang-en {
 .hero {
   min-height: 100vh;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("hero.webp");
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("images/hero.webp");
   background-size: cover;
   background-position: center center;
   background-attachment: scroll;
